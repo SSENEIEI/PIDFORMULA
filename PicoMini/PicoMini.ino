@@ -119,10 +119,12 @@ int readline()
   for (uint8_t i = 0; i < _NumofSensor; i++)
   {
     long value = ReadLightSensor(i);
+    // keep track of whether we see the line at all 20%
     if (value > _Sensitive) {
       onLine = 1;
     }
-    if (value > 5)
+    // only average in values that are above a noise threshold
+    if (value > 50)
     {
       avg += (long)value * (i * 100);
       sum += value;

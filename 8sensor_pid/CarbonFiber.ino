@@ -45,12 +45,11 @@ int readline() {
       return 0;  // หมุนไปด้านซ้าย
     }
   }
-  // คำนวณตำแหน่งใหม่และคืนค่าตำแหน่งที่คำนวณได้
   if (sum == 0) {
     return 0;  // หารด้วยศูนย์ไม่ได้
   }
 
-  last_position = avg / sum;
+  last_position = avg / sum;// คำนวณตำแหน่งใหม่และคืนค่าตำแหน่งที่คำนวณได้
 
   if (abs(last_position) < 10) {
     return 0;
